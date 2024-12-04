@@ -31,4 +31,12 @@ if ($part -eq 1) {
 
 Write-Output "difference: $total_difference"
 if ($part -eq 2) {
+    foreach ($line in $lefties) {
+        $left = $line.original_value
+        $mince_pies = ($righties.where{$_.original_value -eq $left}).count
+        [int]$additional_value = [int]$left * [int]$mince_pies
+        $glass_of_sherry = $glass_of_sherry + $additional_value
+        Write-Verbose "out int of choice is $left, this appears to occur $mince_pies times. Adding $additional_value"
+    }
+    Write-Output "difference: $glass_of_sherry"
 }
