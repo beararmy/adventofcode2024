@@ -1,5 +1,6 @@
 $fileToProcess = "./full.input"
 $input = Get-Content -Path $fileToProcess
+$part = 2
 
 $lefties = @()
 $righties = @()
@@ -24,6 +25,10 @@ foreach ($line in $lefties) {
     if ($difference -lt 0) {$difference = -$difference}
     Write-Verbose "left is $left, right is $right, difference is $difference"
     $total_difference += $difference
+if ($part -eq 1) {
+    }
 }
 
 Write-Output "difference: $total_difference"
+if ($part -eq 2) {
+}
