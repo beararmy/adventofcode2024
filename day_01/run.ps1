@@ -21,6 +21,7 @@ foreach ($line in $lefties) {
     $left = $line.original_value
     $right = $righties[$($lefties.IndexOf($line))].original_value
     $difference = $right - $left
+    if ($difference -lt 0) {$difference = -$difference}
     Write-Verbose "left is $left, right is $right, difference is $difference"
     $total_difference += $difference
 }
